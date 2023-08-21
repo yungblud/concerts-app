@@ -1,16 +1,24 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import React from 'react';
+import {
+  BottomTabBarProps,
+  createBottomTabNavigator,
+} from '@react-navigation/bottom-tabs';
+import React, {useCallback} from 'react';
 import HomeStackNavigation from '../HomeStackNavigation/HomeStackNavigation';
 import SearchStackNavigation from '../SearchStackNavigation/SearchStackNavigation';
 import {MainTabParamList} from './types';
+import BottomTabBar from '../../components/BottomTabBar';
 
 const MainBottomTab = createBottomTabNavigator<MainTabParamList>();
 
 interface MainBottomTabNavigationProps {}
 
 const MainBottomTabNavigation = ({}: MainBottomTabNavigationProps) => {
+  const renderTabBar = useCallback(
+    (props: BottomTabBarProps) => <BottomTabBar {...props} />,
+    [],
+  );
   return (
-    <MainBottomTab.Navigator>
+    <MainBottomTab.Navigator tabBar={renderTabBar}>
       <MainBottomTab.Screen name="HomeStack" component={HomeStackNavigation} />
       <MainBottomTab.Screen
         name="SearchStack"
