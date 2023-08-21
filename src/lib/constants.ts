@@ -9,11 +9,19 @@ export const navigations = {
     name: 'HomeStack',
     params: z.object({}),
   },
+  SearchStack: {
+    name: 'SearchStack',
+    params: z.object({}),
+  },
 } as const;
 
 export const screens = {
   Home: {
     name: 'HomeScreen',
+    params: z.object({}),
+  },
+  Search: {
+    name: 'SearchScreen',
     params: z.object({}),
   },
 } as const;

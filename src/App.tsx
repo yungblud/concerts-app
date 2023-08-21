@@ -6,6 +6,7 @@
  */
 
 import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
 import RootStackNavigation from './navigations/RootStackNavigation/RootStackNavigation';
 
 function App() {

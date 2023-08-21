@@ -6,9 +6,11 @@ import {
   RootStackParamList,
   RootStackScreenProps,
 } from '../RootStackNavigation/types';
+import {SearchStackParams} from '../SearchStackNavigation/types';
 
 export type MainTabParamList = {
   [navigations.HomeStack.name]: HomeStackParams;
+  [navigations.SearchStack.name]: SearchStackParams;
 };
 
 export type MainTabScreenProps<T extends keyof MainTabParamList> =
