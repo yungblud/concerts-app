@@ -7,6 +7,7 @@ import HomeStackNavigation from '../HomeStackNavigation/HomeStackNavigation';
 import SearchStackNavigation from '../SearchStackNavigation/SearchStackNavigation';
 import {MainTabParamList} from './types';
 import BottomTabBar from '../../components/BottomTabBar';
+import {Platform} from 'react-native';
 
 const MainBottomTab = createBottomTabNavigator<MainTabParamList>();
 
@@ -18,7 +19,9 @@ const MainBottomTabNavigation = ({}: MainBottomTabNavigationProps) => {
     [],
   );
   return (
-    <MainBottomTab.Navigator tabBar={renderTabBar}>
+    <MainBottomTab.Navigator
+      tabBar={renderTabBar}
+      detachInactiveScreens={Platform.OS !== 'android'}>
       <MainBottomTab.Screen name="HomeStack" component={HomeStackNavigation} />
       <MainBottomTab.Screen
         name="SearchStack"
