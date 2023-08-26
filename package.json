@@ -18,6 +18,7 @@
     "react-native-haptic-feedback": "^2.0.3",
     "react-native-safe-area-context": "^4.7.1",
     "react-native-screens": "^3.24.0",
+    "styled-components": "^6.0.7",
     "zod": "^3.22.2"
   },
   "devDependencies": {
