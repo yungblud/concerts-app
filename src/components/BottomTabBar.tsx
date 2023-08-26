@@ -50,12 +50,13 @@ const BottomTabBar = ({state, navigation}: Props) => {
           accessibilityState={isFocused ? {selected: true} : {}}
           onPress={onPress}
           onLongPress={onLongPress}
-          key={route.key}>
-          <TabBarLabel>{label}</TabBarLabel>
+          key={route.key}
+          style={{height: 62 + bottomInset}}>
+          <TabBarLabel style={{marginBottom: bottomInset}}>{label}</TabBarLabel>
         </TabBarItem>
       );
     });
-  }, [navigation, state.index, state.routes]);
+  }, [bottomInset, navigation, state.index, state.routes]);
 
   return (
     <Gradient
@@ -90,13 +91,11 @@ const TabBarItem = styled.TouchableOpacity`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0);
   height: 100%;
 `;
 
 const TabBarLabel = styled.Text`
   color: white;
-  margin-bottom: 4;
   font-weight: bold;
 `;
 
