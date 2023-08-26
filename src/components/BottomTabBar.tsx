@@ -3,6 +3,8 @@ import React, {memo, useMemo} from 'react';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
+import LinearGradient from 'react-native-linear-gradient';
+import {navigations} from '../lib/constants';
 
 interface Props extends BottomTabBarProps {}
 
@@ -31,38 +33,71 @@ const BottomTabBar = ({state, navigation}: Props) => {
         });
         ReactNativeHapticFeedback.trigger('impactLight', {});
       };
+      let label = '';
+      switch (route.name) {
+        case navigations.HomeStack.name:
+          label = 'Home';
+          break;
+        case navigations.SearchStack.name:
+          label = 'Search';
+          break;
+        default:
+          break;
+      }
       return (
         <TabBarItem
           accessibilityRole="button"
           accessibilityState={isFocused ? {selected: true} : {}}
           onPress={onPress}
           onLongPress={onLongPress}
-          key={route.key}
-          style={{
-            height: 50 + bottomInset,
-          }}>
-          <TabBarLabel style={{marginBottom: bottomInset}}>
-            {route.name}
-          </TabBarLabel>
+          key={route.key}>
+          <TabBarLabel>{label}</TabBarLabel>
         </TabBarItem>
       );
     });
-  }, [bottomInset, navigation, state.index, state.routes]);
+  }, [navigation, state.index, state.routes]);
 
-  return <Wrapper>{tabBarItems}</Wrapper>;
+  return (
+    <Gradient
+      colors={[
+        'rgba(0, 0, 0, 0.6)',
+        'rgba(0, 0, 0, 0.7)',
+        'rgba(0, 0, 0, 0.8)',
+        'rgba(0, 0, 0, 0.9)',
+        'rgba(0, 0, 0, 1)',
+      ]}
+      start={{x: 0, y: 0}}
+      end={{x: 0, y: 1.0}}
+      useAngle
+      angle={180}
+      style={{
+        height: 62 + bottomInset,
+      }}>
+      <Wrapper>{tabBarItems}</Wrapper>
+    </Gradient>
+  );
 };
+
+const Gradient = styled(LinearGradient)`
+  width: 100%;
+`;
 
 const Wrapper = styled.View`
   flex-direction: row;
-  background-color: orange;
 `;
 
 const TabBarItem = styled.TouchableOpacity`
   flex: 1;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
 `;
 
-const TabBarLabel = styled.Text``;
+const TabBarLabel = styled.Text`
+  color: white;
+  margin-bottom: 4;
+  font-weight: bold;
+`;
 
 export default memo(BottomTabBar);
