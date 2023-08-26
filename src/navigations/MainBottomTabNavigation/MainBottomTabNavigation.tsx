@@ -20,6 +20,9 @@ const MainBottomTabNavigation = ({}: MainBottomTabNavigationProps) => {
   );
   return (
     <MainBottomTab.Navigator
+      screenOptions={{
+        header: () => null,
+      }}
       tabBar={renderTabBar}
       detachInactiveScreens={Platform.OS !== 'android'}>
       <MainBottomTab.Screen name="HomeStack" component={HomeStackNavigation} />

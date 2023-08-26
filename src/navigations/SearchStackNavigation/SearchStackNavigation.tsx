@@ -8,7 +8,7 @@ const SearchStack = createNativeStackNavigator<SearchStackParamList>();
 interface SearchStackNavigationProps {}
 
 const SearchStackNavigation = ({}: SearchStackNavigationProps) => (
-  <SearchStack.Navigator>
+  <SearchStack.Navigator screenOptions={{header: () => null}}>
     <SearchStack.Screen name="SearchScreen" component={SearchScreen} />
   </SearchStack.Navigator>
 );

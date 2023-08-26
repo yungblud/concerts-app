@@ -9,7 +9,7 @@ interface HomeStackNavigationProps {}
 
 const HomeStackNavigation = ({}: HomeStackNavigationProps) => {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator screenOptions={{header: () => null}}>
       <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
     </HomeStack.Navigator>
   );

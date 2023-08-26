@@ -13,6 +13,7 @@ const RootStackNavigation = ({}: RootStackNavigationProps) => {
       <RootStack.Screen
         name="MainBottomTab"
         component={MainBottomTabNavigation}
+        options={{header: () => null}}
       />
     </RootStack.Navigator>
   );
