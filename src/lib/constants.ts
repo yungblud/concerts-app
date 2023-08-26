@@ -13,6 +13,10 @@ export const navigations = {
     name: 'SearchStack',
     params: z.object({}),
   },
+  SettingStack: {
+    name: 'SettingStack',
+    params: z.object({}),
+  },
 } as const;
 
 export const screens = {
@@ -22,6 +26,10 @@ export const screens = {
   },
   Search: {
     name: 'SearchScreen',
+    params: z.object({}),
+  },
+  Setting: {
+    name: 'SettingScreen',
     params: z.object({}),
   },
 } as const;

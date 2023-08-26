@@ -7,10 +7,12 @@ import {
   RootStackScreenProps,
 } from '../RootStackNavigation/types';
 import {SearchStackParams} from '../SearchStackNavigation/types';
+import {SettingStackParams} from '../SettingStackNavigation/types';
 
 export type MainTabParamList = {
   [navigations.HomeStack.name]: HomeStackParams;
   [navigations.SearchStack.name]: SearchStackParams;
+  [navigations.SettingStack.name]: SettingStackParams;
 };
 
 export type MainTabScreenProps<T extends keyof MainTabParamList> =
