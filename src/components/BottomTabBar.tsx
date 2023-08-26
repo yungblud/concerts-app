@@ -5,6 +5,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
 import {navigations} from '../lib/constants';
+import SearchIcon from './icons/SearchIcon';
+import HomeIcon from './icons/HomeIcon';
 
 interface Props extends BottomTabBarProps {}
 
@@ -44,6 +46,7 @@ const BottomTabBar = ({state, navigation}: Props) => {
         default:
           break;
       }
+
       return (
         <TabBarItem
           accessibilityRole="button"
@@ -52,6 +55,16 @@ const BottomTabBar = ({state, navigation}: Props) => {
           onLongPress={onLongPress}
           key={route.key}
           style={{height: 62 + bottomInset}}>
+          {(() => {
+            switch (route.name) {
+              case navigations.HomeStack.name:
+                return <Home fill={'#ffffff'} />;
+              case navigations.SearchStack.name:
+                return <Search fill={'#ffffff'} />;
+              default:
+                return null;
+            }
+          })()}
           <TabBarLabel style={{marginBottom: bottomInset}}>{label}</TabBarLabel>
         </TabBarItem>
       );
@@ -97,6 +110,18 @@ const TabBarItem = styled.TouchableOpacity`
 const TabBarLabel = styled.Text`
   color: white;
   font-weight: bold;
+  font-size: 12px;
+  margin-top: 4px;
+`;
+
+const Home = styled(HomeIcon)`
+  width: 18px;
+  height: 18px;
+`;
+
+const Search = styled(SearchIcon)`
+  width: 18px;
+  height: 18px;
 `;
 
 export default memo(BottomTabBar);
