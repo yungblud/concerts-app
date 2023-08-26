@@ -35,17 +35,9 @@ const BottomTabBar = ({state, navigation}: Props) => {
         });
         ReactNativeHapticFeedback.trigger('impactLight', {});
       };
-      let label = '';
-      switch (route.name) {
-        case navigations.HomeStack.name:
-          label = 'Home';
-          break;
-        case navigations.SearchStack.name:
-          label = 'Search';
-          break;
-        default:
-          break;
-      }
+
+      const focusedColor = '#ffffff';
+      const unfocusedColor = 'rgb(188, 188, 188)';
 
       return (
         <TabBarItem
@@ -58,14 +50,33 @@ const BottomTabBar = ({state, navigation}: Props) => {
           {(() => {
             switch (route.name) {
               case navigations.HomeStack.name:
-                return <Home fill={'#ffffff'} />;
+                return (
+                  <Home fill={isFocused ? focusedColor : unfocusedColor} />
+                );
               case navigations.SearchStack.name:
-                return <Search fill={'#ffffff'} />;
+                return (
+                  <Search fill={isFocused ? focusedColor : unfocusedColor} />
+                );
               default:
                 return null;
             }
           })()}
-          <TabBarLabel style={{marginBottom: bottomInset}}>{label}</TabBarLabel>
+          <TabBarLabel
+            style={{
+              marginBottom: bottomInset,
+              color: isFocused ? focusedColor : unfocusedColor,
+            }}>
+            {(() => {
+              switch (route.name) {
+                case navigations.HomeStack.name:
+                  return 'Home';
+                case navigations.SearchStack.name:
+                  return 'Search';
+                default:
+                  return '';
+              }
+            })()}
+          </TabBarLabel>
         </TabBarItem>
       );
     });
