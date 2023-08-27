@@ -10,7 +10,11 @@ interface SettingStackNavigationProps {}
 const SettingStackNavigation = ({}: SettingStackNavigationProps) => {
   return (
     <SettingStack.Navigator>
-      <SettingStack.Screen name="SettingScreen" component={SettingScreen} />
+      <SettingStack.Screen
+        options={{header: () => null}}
+        name="SettingScreen"
+        component={SettingScreen}
+      />
     </SettingStack.Navigator>
   );
 };
