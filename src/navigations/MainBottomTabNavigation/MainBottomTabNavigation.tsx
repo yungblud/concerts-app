@@ -8,6 +8,7 @@ import SearchStackNavigation from '../SearchStackNavigation/SearchStackNavigatio
 import {MainTabParamList} from './types';
 import BottomTabBar from '../../components/BottomTabBar';
 import {Platform} from 'react-native';
+import SettingStackNavigation from '../SettingStackNavigation/SettingStackNavigation';
 
 const MainBottomTab = createBottomTabNavigator<MainTabParamList>();
 
@@ -29,6 +30,10 @@ const MainBottomTabNavigation = ({}: MainBottomTabNavigationProps) => {
       <MainBottomTab.Screen
         name="SearchStack"
         component={SearchStackNavigation}
+      />
+      <MainBottomTab.Screen
+        name="SettingStack"
+        component={SettingStackNavigation}
       />
     </MainBottomTab.Navigator>
   );

@@ -7,6 +7,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {navigations} from '../lib/constants';
 import SearchIcon from './icons/SearchIcon';
 import HomeIcon from './icons/HomeIcon';
+import GenieIcon from './icons/GenieIcon';
 
 interface Props extends BottomTabBarProps {}
 
@@ -57,6 +58,10 @@ const BottomTabBar = ({state, navigation}: Props) => {
                 return (
                   <Search fill={isFocused ? focusedColor : unfocusedColor} />
                 );
+              case navigations.SettingStack.name:
+                return (
+                  <Genie fill={isFocused ? focusedColor : unfocusedColor} />
+                );
               default:
                 return null;
             }
@@ -72,6 +77,8 @@ const BottomTabBar = ({state, navigation}: Props) => {
                   return 'Home';
                 case navigations.SearchStack.name:
                   return 'Search';
+                case navigations.SettingStack.name:
+                  return 'My';
                 default:
                   return '';
               }
@@ -126,13 +133,18 @@ const TabBarLabel = styled.Text`
 `;
 
 const Home = styled(HomeIcon)`
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 `;
 
 const Search = styled(SearchIcon)`
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
+`;
+
+const Genie = styled(GenieIcon)`
+  width: 24px;
+  height: 24px;
 `;
 
 export default memo(BottomTabBar);
