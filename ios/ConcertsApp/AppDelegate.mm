@@ -23,4 +23,9 @@
 #endif
 }
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+  UIInterfaceOrientationMask supportedMask = UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+  return supportedMask;
+}
+
 @end
