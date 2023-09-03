@@ -17,6 +17,10 @@ export const navigations = {
     name: 'SettingStack',
     params: z.object({}),
   },
+  SplashStack: {
+    name: 'SplashStack',
+    params: z.object({}),
+  },
 } as const;
 
 export const screens = {
@@ -30,6 +34,10 @@ export const screens = {
   },
   Setting: {
     name: 'SettingScreen',
+    params: z.object({}),
+  },
+  Splash: {
+    name: 'SplashScreen',
     params: z.object({}),
   },
 } as const;
