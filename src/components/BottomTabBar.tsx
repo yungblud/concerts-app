@@ -90,11 +90,10 @@ const BottomTabBar = ({state, navigation}: Props) => {
 
   return (
     <View
-      style={
-        {
-          // height: 48 + bottomInset,
-        }
-      }>
+      style={{
+        borderTopColor: colors.gray.light,
+        borderTopWidth: 1,
+      }}>
       <Wrapper>{tabBarItems}</Wrapper>
     </View>
   );
