@@ -1125,13 +1125,6 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNReactNativeHapticFeedback (2.0.3):
-    - RCT-Folly
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Codegen
-    - React-Core
-    - ReactCommon/turbomodule/core
   - RNScreens (3.24.0):
     - RCT-Folly
     - RCTRequired
@@ -1256,7 +1249,6 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNLinearGradient (from `../node_modules/react-native-linear-gradient`)
-  - RNReactNativeHapticFeedback (from `../node_modules/react-native-haptic-feedback`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -1366,8 +1358,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNLinearGradient:
     :path: "../node_modules/react-native-linear-gradient"
-  RNReactNativeHapticFeedback:
-    :path: "../node_modules/react-native-haptic-feedback"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNSVG:
@@ -1431,7 +1421,6 @@ SPEC CHECKSUMS:
   React-utils: b79f2411931f9d3ea5781404dcbb2fa8a837e13a
   ReactCommon: 4b2bdcb50a3543e1c2b2849ad44533686610826d
   RNLinearGradient: a50b5c07ddf8a130c03dc81f0dd3b278466bd4e3
-  RNReactNativeHapticFeedback: 70dd302f264d06d1a2e0632a717d0b3ed10a0f35
   RNScreens: e114ddbc9b91fbde662870c4256196ab0833314b
   RNSVG: e136c0e3c70ff4fb98687fc5a887039c436c65e6
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
