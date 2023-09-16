@@ -1,6 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {useIsSplashReady} from '../../lib/hooks/useIsSplashReady';
+import AuthStackNavigation from '../AuthStackNavigation/AuthStackNavigation';
 import MainBottomTabNavigation from '../MainBottomTabNavigation/MainBottomTabNavigation';
 import SplashStackNavigation from '../SplashStackNavigation/SplashStackNavigation';
 import {RootStackParamList} from './types';
@@ -32,7 +33,14 @@ const RootStackNavigation = ({}: RootStackNavigationProps) => {
           header: () => null,
           animation: 'none',
           orientation: 'portrait',
-          // gestureEnabled: false,
+        }}
+      />
+      <RootStack.Screen
+        name="AuthStack"
+        component={AuthStackNavigation}
+        options={{
+          header: () => null,
+          orientation: 'portrait',
         }}
       />
     </RootStack.Navigator>

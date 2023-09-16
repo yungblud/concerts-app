@@ -21,6 +21,10 @@ export const navigations = {
     name: 'SplashStack',
     params: z.object({}),
   },
+  AuthStack: {
+    name: 'AuthStack',
+    params: z.object({}),
+  },
 } as const;
 
 export const screens = {
@@ -38,6 +42,10 @@ export const screens = {
   },
   Splash: {
     name: 'SplashScreen',
+    params: z.object({}),
+  },
+  Login: {
+    name: 'LoginScreen',
     params: z.object({}),
   },
 } as const;

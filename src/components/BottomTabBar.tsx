@@ -2,7 +2,6 @@ import type {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import React, {memo, useMemo} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
-import LinearGradient from 'react-native-linear-gradient';
 import {navigations} from '../lib/constants';
 import SearchIcon from './icons/SearchIcon';
 import HomeIcon from './icons/HomeIcon';
@@ -90,34 +89,14 @@ const BottomTabBar = ({state, navigation}: Props) => {
   }, [bottomInset, navigation, state.index, state.routes]);
 
   return (
-    // <Gradient
-    //   colors={[
-    //     'rgba(0, 0, 0, 0.6)',
-    //     'rgba(0, 0, 0, 0.7)',
-    //     'rgba(0, 0, 0, 0.8)',
-    //     'rgba(0, 0, 0, 0.9)',
-    //     'rgba(0, 0, 0, 1)',
-    //   ]}
-    //   start={{x: 0, y: 0}}
-    //   end={{x: 0, y: 1.0}}
-    //   useAngle
-    //   angle={180}
-    //   style={{
-    //     height: 62 + bottomInset,
-    //   }}>
     <View
       style={{
         height: 48 + bottomInset,
       }}>
       <Wrapper>{tabBarItems}</Wrapper>
     </View>
-    // </Gradient>
   );
 };
-
-const Gradient = styled(LinearGradient)`
-  width: 100%;
-`;
 
 const Wrapper = styled.View`
   flex-direction: row;
