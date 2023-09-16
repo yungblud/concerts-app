@@ -46,7 +46,7 @@ const BottomTabBar = ({state, navigation}: Props) => {
           onLongPress={onLongPress}
           activeOpacity={1.0}
           key={route.key}
-          style={{height: 62 + bottomInset}}>
+          style={{height: 58 + bottomInset, justifyContent: 'center'}}>
           {(() => {
             switch (route.name) {
               case navigations.HomeStack.name:
@@ -67,7 +67,7 @@ const BottomTabBar = ({state, navigation}: Props) => {
           })()}
           <TabBarLabel
             style={{
-              marginBottom: bottomInset,
+              // marginBottom: bottomInset,
               color: isFocused ? focusedColor : unfocusedColor,
             }}>
             {(() => {
@@ -90,9 +90,11 @@ const BottomTabBar = ({state, navigation}: Props) => {
 
   return (
     <View
-      style={{
-        height: 48 + bottomInset,
-      }}>
+      style={
+        {
+          // height: 48 + bottomInset,
+        }
+      }>
       <Wrapper>{tabBarItems}</Wrapper>
     </View>
   );
@@ -106,7 +108,7 @@ const TabBarItem = styled.TouchableOpacity`
   flex: 1;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  /* height: 100%; */
   background-color: ${colors.gray.base};
 `;
 
@@ -114,22 +116,22 @@ const TabBarLabel = styled.Text`
   color: white;
   font-weight: bold;
   font-size: 12px;
-  margin-top: 4px;
+  margin-top: 8px;
 `;
 
 const Home = styled(HomeIcon)`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 `;
 
 const Search = styled(SearchIcon)`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 `;
 
 const Genie = styled(GenieIcon)`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 `;
 
 export default memo(BottomTabBar);
