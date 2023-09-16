@@ -1,5 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
+import {useIsSplashReady} from '../../lib/hooks/useIsSplashReady';
 import MainBottomTabNavigation from '../MainBottomTabNavigation/MainBottomTabNavigation';
 import SplashStackNavigation from '../SplashStackNavigation/SplashStackNavigation';
 import {RootStackParamList} from './types';
@@ -9,17 +10,20 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 interface RootStackNavigationProps {}
 
 const RootStackNavigation = ({}: RootStackNavigationProps) => {
+  const [isReady] = useIsSplashReady();
   return (
     <RootStack.Navigator>
-      <RootStack.Screen
-        name="SplashStack"
-        options={{
-          orientation: 'portrait',
-          header: () => null,
-          animation: 'none',
-        }}
-        component={SplashStackNavigation}
-      />
+      {!isReady && (
+        <RootStack.Screen
+          name="SplashStack"
+          options={{
+            orientation: 'portrait',
+            header: () => null,
+            animation: 'none',
+          }}
+          component={SplashStackNavigation}
+        />
+      )}
 
       <RootStack.Screen
         name="MainBottomTab"
@@ -28,6 +32,7 @@ const RootStackNavigation = ({}: RootStackNavigationProps) => {
           header: () => null,
           animation: 'none',
           orientation: 'portrait',
+          // gestureEnabled: false,
         }}
       />
     </RootStack.Navigator>
