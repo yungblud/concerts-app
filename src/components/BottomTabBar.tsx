@@ -2,12 +2,12 @@ import type {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import React, {memo, useMemo} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
-import {navigations} from '../lib/constants';
-import SearchIcon from './icons/SearchIcon';
-import HomeIcon from './icons/HomeIcon';
-import GenieIcon from './icons/GenieIcon';
+import {navigations} from '@app/lib/constants';
+import SearchIcon from '@app/components/icons/SearchIcon';
+import HomeIcon from '@app/components/icons/HomeIcon';
+import GenieIcon from '@app/components/icons/GenieIcon';
 import {View} from 'react-native';
-import colors from '../lib/colors';
+import colors from '@app/lib/colors';
 
 interface Props extends BottomTabBarProps {}
 
@@ -67,7 +67,6 @@ const BottomTabBar = ({state, navigation}: Props) => {
           })()}
           <TabBarLabel
             style={{
-              // marginBottom: bottomInset,
               color: isFocused ? focusedColor : unfocusedColor,
             }}>
             {(() => {
@@ -107,7 +106,6 @@ const TabBarItem = styled.TouchableOpacity`
   flex: 1;
   align-items: center;
   justify-content: center;
-  /* height: 100%; */
   background-color: ${colors.gray.base};
 `;
 

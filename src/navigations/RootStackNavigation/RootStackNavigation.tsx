@@ -1,10 +1,10 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {useIsSplashReady} from '../../lib/hooks/useIsSplashReady';
-import AuthStackNavigation from '../AuthStackNavigation/AuthStackNavigation';
-import MainBottomTabNavigation from '../MainBottomTabNavigation/MainBottomTabNavigation';
-import SplashStackNavigation from '../SplashStackNavigation/SplashStackNavigation';
-import {RootStackParamList} from './types';
+import {useIsSplashReady} from '@app/lib/hooks/useIsSplashReady';
+import AuthStackNavigation from '@app/navigations/AuthStackNavigation/AuthStackNavigation';
+import MainBottomTabNavigation from '@app/navigations/MainBottomTabNavigation/MainBottomTabNavigation';
+import SplashStackNavigation from '@app/navigations/SplashStackNavigation/SplashStackNavigation';
+import {RootStackParamList} from '@app/navigations/RootStackNavigation/types';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -25,7 +25,6 @@ const RootStackNavigation = ({}: RootStackNavigationProps) => {
           component={SplashStackNavigation}
         />
       )}
-
       <RootStack.Screen
         name="MainBottomTab"
         component={MainBottomTabNavigation}
