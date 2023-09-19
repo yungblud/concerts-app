@@ -1,5 +1,5 @@
 import {View} from 'react-native';
-import {useSplashTimeout} from './hooks';
+import useSplashTimeout from './hooks/useSplashTimeout';
 
 interface SplashScreenProps {}
 
